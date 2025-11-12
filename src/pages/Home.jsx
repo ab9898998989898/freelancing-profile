@@ -144,7 +144,7 @@ const Home = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-heading font-bold text-gray-900 mb-6"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-gray-900 mb-4 sm:mb-6"
             >
               Hi, I'm <span className="text-primary">Abdullah Nadeem</span>
             </motion.h1>
@@ -152,7 +152,7 @@ const Home = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-gray-600 mb-4"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-3 sm:mb-4"
             >
               I Build Modern Websites That Grow Your Business
             </motion.p>
@@ -160,7 +160,7 @@ const Home = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto"
+              className="text-base sm:text-lg text-gray-500 mb-8 sm:mb-12 max-w-2xl mx-auto"
             >
               From elegant landing pages to full-stack web apps, I create fast, functional, and visually stunning experiences that drive results and exceed expectations.
             </motion.p>
@@ -172,14 +172,14 @@ const Home = () => {
             >
               <Link
                 to="/portfolio"
-                className="group bg-primary text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-primary/50 flex items-center justify-center gap-2"
+                className="group bg-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-primary/50 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 Hire Me
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="#portfolio"
-                className="border-2 border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
+                href="/portfolio"
+                className="border-2 border-primary text-primary px-6 py-3 sm:px-8 sm:py-4 rounded-full hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 Explore My Work
               </a>
@@ -190,8 +190,8 @@ const Home = () => {
 
       {/* Achievements Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 max-w-6xl mx-auto">
             {achievements.map((achievement, idx) => (
               <motion.div
                 key={achievement.label}
@@ -201,13 +201,13 @@ const Home = () => {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="text-primary mb-4 flex justify-center">
+                <div className="text-primary mb-3 flex justify-center">
                   {achievement.icon}
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">
                   {achievement.number}
                 </div>
-                <div className="text-gray-600 font-medium">{achievement.label}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{achievement.label}</div>
               </motion.div>
             ))}
           </div>
@@ -216,8 +216,8 @@ const Home = () => {
 
       {/* About Me Section */}
       <section className="py-32 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -225,22 +225,22 @@ const Home = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="relative">
-                <div className="w-full h-[500px] bg-gradient-to-br from-primary to-secondary rounded-2xl"></div>
+                <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] bg-gradient-to-br from-primary to-secondary rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl backdrop-blur-sm flex items-center justify-center">
-                  <span className="text-white text-8xl font-bold">AN</span>
+                  <img className='w-full h-full rounded object-cover' src="/abd.jpg" alt="Abdullah Nadeem" title='Abdullah Nadeem' />
                 </div>
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl"
+                  className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900">Available</div>
-                      <div className="text-sm text-gray-600">For New Projects</div>
+                      <div className="font-bold text-gray-900 text-sm sm:text-base">Available</div>
+                      <div className="text-xs sm:text-sm text-gray-600">For New Projects</div>
                     </div>
                   </div>
                 </motion.div>
@@ -253,18 +253,18 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">About Me</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">About Me</h2>
+              <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg">
                 I'm a passionate freelance developer and digital marketer dedicated to helping businesses succeed online. With expertise in modern web technologies and proven marketing strategies, I deliver solutions that not only look great but drive real results.
               </p>
-              <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+              <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg">
                 Over the past 5+ years, I've had the privilege of working with startups, small businesses, and established companies, helping them achieve their digital goals through custom web solutions and strategic marketing.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
                 Whether you need a stunning website, a full-stack application, or want to dominate search results and ads, I combine technical expertise with business acumen to deliver exceptional value.
               </p>
 
-              <div className="space-y-5 mb-10">
+              <div className="space-y-4 sm:space-y-5 mb-8 sm:mb-10">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
@@ -274,10 +274,10 @@ const Home = () => {
                     transition={{ delay: index * 0.1, duration: 0.8 }}
                   >
                     <div className="flex justify-between mb-2">
-                      <span className="font-semibold text-gray-700">{skill.name}</span>
-                      <span className="text-primary font-bold">{skill.level}%</span>
+                      <span className="font-semibold text-gray-700 text-sm sm:text-base">{skill.name}</span>
+                      <span className="text-primary font-bold text-sm sm:text-base">{skill.level}%</span>
                     </div>
-                    <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -292,10 +292,10 @@ const Home = () => {
 
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-all hover:shadow-lg font-semibold"
+                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full hover:bg-blue-700 transition-all hover:shadow-lg font-semibold text-sm sm:text-base"
               >
                 View All Services
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </motion.div>
           </div>
@@ -304,20 +304,20 @@ const Home = () => {
 
       {/* Why Work With Me */}
       <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-16 md:mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Why Work With Me</h2>
-            <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">Why Work With Me</h2>
+            <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
               I combine technical excellence with business understanding to deliver exceptional results that drive growth
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto mb-16">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto mb-12 sm:mb-16">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -326,14 +326,14 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-gradient-to-br from-blue-50 to-green-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
+                className="bg-gradient-to-br from-blue-50 to-green-50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
               >
-                <div className="text-primary mb-6 group-hover:scale-110 transition-transform">
+                <div className="text-primary mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-700 mb-4 font-medium">{feature.description}</p>
-                <p className="text-gray-600 leading-relaxed">{feature.details}</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">{feature.title}</h3>
+                <p className="text-gray-700 mb-3 sm:mb-4 font-medium text-sm sm:text-base">{feature.description}</p>
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{feature.details}</p>
               </motion.div>
             ))}
           </div>
@@ -342,15 +342,15 @@ const Home = () => {
 
       {/* Process Section */}
       <section className="py-32 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-16 md:mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">My Process</h2>
-            <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">My Process</h2>
+            <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
               A proven, systematic approach that ensures quality results and client satisfaction every time
             </p>
           </motion.div>
@@ -363,25 +363,25 @@ const Home = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15, duration: 0.6 }}
-                className="relative mb-12 last:mb-0"
+                className="relative mb-8 sm:mb-10 md:mb-12 last:mb-0"
               >
-                <div className="flex items-start gap-8">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center text-white shadow-lg">
-                      {step.icon}
+                <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+                    <div className="flex-shrink-0 flex justify-center sm:justify-start">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center text-white shadow-lg">
+                        {step.icon}
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary/20">{step.number}</span>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{step.title}</h3>
+                      </div>
+                      <p className="text-gray-600 text-base sm:text-lg leading-relaxed">{step.description}</p>
                     </div>
                   </div>
-                  <div className="flex-1 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-5xl font-bold text-primary/20">{step.number}</span>
-                      <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
-                    </div>
-                    <p className="text-gray-600 text-lg leading-relaxed">{step.description}</p>
-                  </div>
-                </div>
-                {idx < processSteps.length - 1 && (
-                  <div className="absolute left-10 top-20 w-0.5 h-12 bg-gradient-to-b from-primary to-secondary"></div>
-                )}
+                  {idx < processSteps.length - 1 && (
+                    <div className="absolute left-8 sm:left-10 top-16 sm:top-20 w-0.5 h-10 sm:h-12 bg-gradient-to-b from-primary to-secondary hidden sm:block"></div>
+                  )}
               </motion.div>
             ))}
           </div>
@@ -390,20 +390,20 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-16 md:mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Client Success Stories</h2>
-            <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">Client Success Stories</h2>
+            <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
               Don't just take my word for it - hear from clients who've achieved remarkable results
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {testimonials.map((testimonial, idx) => (
               <motion.div
                 key={testimonial.name}
@@ -411,17 +411,17 @@ const Home = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15, duration: 0.6 }}
-                className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+                className="bg-gradient-to-br from-blue-50 to-green-50 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
+                    <span key={i} className="text-yellow-400 text-lg sm:text-xl">★</span>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-gray-600 text-sm">{testimonial.role}</div>
+                <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed italic text-sm sm:text-base">"{testimonial.content}"</p>
+                <div className="border-t pt-3 sm:pt-4">
+                  <div className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</div>
+                  <div className="text-gray-600 text-xs sm:text-sm">{testimonial.role}</div>
                 </div>
               </motion.div>
             ))}
@@ -443,27 +443,27 @@ const Home = () => {
             className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
           />
         </div>
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl md:text-2xl mb-12 text-blue-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6">Ready to Start Your Project?</h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 text-blue-100 px-4">
               Let's work together to bring your vision to life or level up your skills with my comprehensive courses
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <Link
                 to="/portfolio"
-                className="bg-white text-primary px-10 py-5 rounded-full hover:bg-blue-50 transition-all hover:shadow-2xl font-bold text-lg"
+                className="bg-white text-primary px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-full hover:bg-blue-50 transition-all hover:shadow-2xl font-bold text-base sm:text-lg"
               >
                 Get In Touch
               </Link>
               <Link
                 to="/courses"
-                className="border-2 border-white text-white px-10 py-5 rounded-full hover:bg-white hover:text-primary transition-all font-bold text-lg"
+                className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-full hover:bg-white hover:text-primary transition-all font-bold text-base sm:text-lg"
               >
                 Explore Courses
               </Link>

@@ -33,14 +33,14 @@ const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-heading font-bold text-primary">
+          <Link to="/" className="text-xl sm:text-2xl font-heading font-bold text-primary">
             Abdullah Nadeem
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -62,7 +62,7 @@ const Header = () => {
             ))}
             <Link
               to="/portfolio#contact"
-              className="bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-primary/30"
+              className="bg-primary text-white px-4 py-2 sm:px-6 sm:py-2 rounded-full hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-primary/30 text-sm sm:text-base"
             >
               Hire Me
             </Link>
@@ -70,8 +70,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-gray-700 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -83,7 +84,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 bg-white rounded-2xl shadow-xl p-6"
+            className="md:hidden mt-4 bg-white rounded-2xl shadow-xl p-6 absolute left-4 right-4 top-full z-50"
           >
             {navLinks.map((link) => (
               <Link

@@ -99,7 +99,7 @@ const Courses = () => {
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -109,30 +109,30 @@ const Courses = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
-              className="inline-block mb-6"
+              className="inline-block mb-4 sm:mb-6"
             >
-              <span className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full font-semibold text-sm">
+              <span className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 sm:px-6 sm:py-2 rounded-full font-semibold text-xs sm:text-sm">
                 🎓 Professional Training Programs
               </span>
             </motion.div>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
               Learn From a Professional Developer & Digital Marketer
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 px-4">
               Get hands-on experience building modern projects with step-by-step mentorship
             </p>
-            <div className="flex flex-wrap justify-center gap-8 mb-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">2,500+</div>
-                <div className="text-gray-600">Students Enrolled</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2">2,500+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Students Enrolled</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">4.9★</div>
-                <div className="text-gray-600">Average Rating</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2">4.9★</div>
+                <div className="text-xs sm:text-sm text-gray-600">Average Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">6</div>
-                <div className="text-gray-600">Courses Available</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2">6</div>
+                <div className="text-xs sm:text-sm text-gray-600">Courses Available</div>
               </div>
             </div>
           </motion.div>
@@ -141,8 +141,8 @@ const Courses = () => {
 
       {/* Courses Grid */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {courses.map((course, idx) => (
               <motion.div
                 key={course.title}
@@ -154,55 +154,55 @@ const Courses = () => {
                 className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all group"
               >
                 {/* Card Header */}
-                <div className={`bg-gradient-to-r ${course.gradient} p-8 text-white relative overflow-hidden`}>
+                <div className={`bg-gradient-to-r ${course.gradient} p-5 sm:p-6 md:p-8 text-white relative overflow-hidden`}>
                   <motion.div
-                    className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"
+                    className="absolute top-0 right-0 w-24 h-24 sm:w-32 bg-white/10 rounded-full -mr-12 -mt-12 sm:-mr-16 sm:-mt-16"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 3, repeat: Infinity }}
                   />
                   <div className="relative z-10">
-                    <div className="mb-4">{course.icon}</div>
-                    <h3 className="text-2xl font-bold mb-2">{course.title}</h3>
-                    <span className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
+                    <div className="mb-3 sm:mb-4">{course.icon}</div>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-2">{course.title}</h3>
+                    <span className="inline-block bg-white/20 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs">
                       {course.level}
                     </span>
                   </div>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   {/* Stats */}
-                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                  <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>{course.duration}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
+                      <Users className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>{course.students}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
                       <span>{course.rating}</span>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                     {course.description}
                   </p>
 
                   {/* Skills */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                  <div className="mb-4 sm:mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
                       Skills Covered
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {course.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-blue-50 text-primary rounded-full text-xs font-medium"
+                          className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-50 text-primary rounded-full text-xs font-medium"
                         >
                           {skill}
                         </span>
@@ -211,21 +211,21 @@ const Courses = () => {
                   </div>
 
                   {/* Tools */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2 text-sm">Tools & Technologies:</h4>
-                    <p className="text-gray-600 text-sm">{course.tools.join(', ')}</p>
+                  <div className="mb-4 sm:mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm">Tools & Technologies:</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">{course.tools.join(', ')}</p>
                   </div>
 
                   {/* CTA Button */}
                   <a
-                    href={`https://forms.google.com/course-enrollment?course=${course.title.replace(/\s+/g, '-').toLowerCase()}`}
+                    href={`https://forms.gle/jNLmg4KDLaFvAjPAA`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`w-full bg-gradient-to-r ${course.gradient} text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all`}
+                      className={`w-full bg-gradient-to-r ${course.gradient} text-white py-2 sm:py-3 rounded-xl font-bold hover:shadow-lg transition-all text-sm sm:text-base`}
                     >
                       Enroll Now
                     </motion.button>
@@ -252,42 +252,42 @@ const Courses = () => {
           />
         </div>
 
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4 sm:mb-6">
               Ready to Start Learning?
             </h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100 px-4">
               Join thousands of students who have transformed their careers with hands-on, practical training
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <a
-                href="https://forms.google.com/course-catalog"
+                href="https://forms.gle/twQeC3b2tKeKsm956"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-primary px-10 py-4 rounded-full hover:bg-blue-50 transition-all hover:shadow-2xl font-bold text-lg"
+                  className="bg-white text-primary px-6 py-3 sm:px-8 sm:py-4 rounded-full hover:bg-blue-50 transition-all hover:shadow-2xl font-bold text-base sm:text-lg"
                 >
                   Browse All Courses
                 </motion.button>
               </a>
               <a
-                href="https://forms.google.com/custom-training-request"
+                href="https://forms.gle/NE9gPNP733tJBPq67"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-10 py-4 rounded-full hover:bg-white hover:text-primary transition-all font-bold text-lg"
+                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full hover:bg-white hover:text-primary transition-all font-bold text-base sm:text-lg"
                 >
                   Contact for Custom Training
                 </motion.button>

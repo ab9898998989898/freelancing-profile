@@ -323,43 +323,43 @@ const Portfolio = () => {
           />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-center mb-16 max-w-4xl mx-auto"
+            className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto"
           >
             <motion.span
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full font-semibold mb-6"
+              className="inline-block bg-primary/10 text-primary px-4 py-1 sm:px-6 sm:py-2 rounded-full font-semibold mb-4 sm:mb-6 text-sm sm:text-base"
             >
               💼 Portfolio Showcase
             </motion.span>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
               Projects That Drive Results
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 px-4">
               A showcase of successful projects delivered to satisfied clients across various industries
             </p>
           </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 max-w-5xl mx-auto">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-white p-6 rounded-2xl shadow-lg text-center"
+                className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg text-center"
               >
-                <div className="text-primary mb-3 flex justify-center">
+                <div className="text-primary mb-2 sm:mb-3 flex justify-center">
                   {stat.icon}
                 </div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.number}</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -371,14 +371,14 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <h3 className="text-center text-gray-600 font-semibold mb-6 text-lg">Filter by Category</h3>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {categories.map((category) => (
                 <motion.button
                   key={category}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-8 py-3 rounded-full font-semibold transition-all text-sm uppercase tracking-wide ${
+                  className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition-all text-xs sm:text-sm uppercase tracking-wide ${
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-primary to-blue-600 text-white shadow-lg shadow-primary/30'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border-2 border-transparent hover:border-primary'
@@ -386,7 +386,7 @@ const Portfolio = () => {
                 >
                   {category === 'all' ? '🎯 All Projects' : category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
                   {selectedCategory === category && (
-                    <span className="ml-2">✓</span>
+                    <span className="ml-1 sm:ml-2">✓</span>
                   )}
                 </motion.button>
               ))}
@@ -409,32 +409,32 @@ const Portfolio = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className={`grid md:grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Project Image/Visual */}
                 <div className={`${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <motion.div
                     whileHover={{ scale: 1.05, rotate: 2 }}
-                    className={`relative h-[400px] bg-gradient-to-br ${project.gradient} rounded-2xl overflow-hidden shadow-2xl group cursor-pointer`}
+                    className={`relative h-64 sm:h-80 md:h-96 bg-gradient-to-br ${project.gradient} rounded-2xl overflow-hidden shadow-2xl group cursor-pointer`}
                   >
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all flex items-center justify-center">
-                      <div className="text-center text-white p-8">
+                      <div className="text-center text-white p-4 sm:p-6 md:p-8">
                         <motion.div
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
-                          className="mb-4"
+                          className="mb-3 sm:mb-4"
                         >
-                          <ExternalLink className="w-16 h-16 mx-auto" />
+                          <ExternalLink className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto" />
                         </motion.div>
-                        <p className="text-2xl font-bold">View Live Project</p>
+                        <p className="text-lg sm:text-xl md:text-2xl font-bold">View Live Project</p>
                       </div>
                     </div>
                     {/* Tech stack badges overlay */}
-                    <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2">
+                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex flex-wrap gap-1 sm:gap-2">
                       {project.stack.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-gray-900"
+                          className="px-2 py-1 sm:px-3 sm:py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs sm:text-sm font-semibold text-gray-900"
                         >
                           {tech}
                         </span>
@@ -451,41 +451,41 @@ const Portfolio = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2, duration: 0.8 }}
                   >
-                    <span className={`inline-block px-4 py-2 bg-gradient-to-r ${project.gradient} text-white rounded-full text-sm font-semibold mb-4`}>
+                    <span className={`inline-block px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r ${project.gradient} text-white rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4`}>
                       {project.category.replace('-', ' ').toUpperCase()}
                     </span>
-                    <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">{project.title}</h2>
-                    <p className="text-xl text-gray-600 mb-6">{project.longDescription}</p>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-3 sm:mb-4">{project.title}</h2>
+                    <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">{project.longDescription}</p>
 
                     {/* Project Info */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="bg-white p-4 rounded-xl shadow">
-                        <Calendar className="w-6 h-6 text-primary mb-2" />
-                        <div className="text-sm text-gray-600">Duration</div>
-                        <div className="font-bold text-gray-900">{project.duration}</div>
+                    <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="bg-white p-3 sm:p-4 rounded-xl shadow">
+                        <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-primary mb-1 sm:mb-2" />
+                        <div className="text-xs sm:text-sm text-gray-600">Duration</div>
+                        <div className="font-bold text-gray-900 text-sm">{project.duration}</div>
                       </div>
-                      <div className="bg-white p-4 rounded-xl shadow">
-                        <Users className="w-6 h-6 text-primary mb-2" />
-                        <div className="text-sm text-gray-600">Team</div>
-                        <div className="font-bold text-gray-900">{project.team}</div>
+                      <div className="bg-white p-3 sm:p-4 rounded-xl shadow">
+                        <Users className="w-5 h-5 sm:w-6 sm:h-6 text-primary mb-1 sm:mb-2" />
+                        <div className="text-xs sm:text-sm text-gray-600">Team</div>
+                        <div className="font-bold text-gray-900 text-sm">{project.team}</div>
                       </div>
-                      <div className="bg-white p-4 rounded-xl shadow">
-                        <TrendingUp className="w-6 h-6 text-primary mb-2" />
-                        <div className="text-sm text-gray-600">Client</div>
-                        <div className="font-bold text-gray-900 text-sm">{project.client}</div>
+                      <div className="bg-white p-3 sm:p-4 rounded-xl shadow">
+                        <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary mb-1 sm:mb-2" />
+                        <div className="text-xs sm:text-sm text-gray-600">Client</div>
+                        <div className="font-bold text-gray-900 text-xs sm:text-sm">{project.client}</div>
                       </div>
                     </div>
 
                     {/* Key Results */}
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Award className="w-6 h-6 text-primary" />
+                    <div className="mb-4 sm:mb-6">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
+                        <Award className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                         Key Results
                       </h3>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {project.results.map((result, rIdx) => (
-                          <div key={rIdx} className="flex items-center gap-2 text-gray-700">
-                            <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+                          <div key={rIdx} className="flex items-center gap-2 text-gray-700 text-sm sm:text-base">
+                            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                             <span className="font-medium">{result}</span>
                           </div>
                         ))}
@@ -493,25 +493,25 @@ const Portfolio = () => {
                     </div>
 
                     {/* Features */}
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Code2 className="w-6 h-6 text-primary" />
+                    <div className="mb-4 sm:mb-6">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
+                        <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                         Key Features
                       </h3>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {project.features.map((feature, fIdx) => (
-                          <div key={fIdx} className="flex items-start gap-2 text-gray-600">
+                          <div key={fIdx} className="flex items-start gap-2 text-gray-600 text-sm">
                             <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-sm">{feature}</span>
+                            <span>{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Testimonial */}
-                    <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-primary">
-                      <p className="text-gray-700 italic mb-3">"{project.testimonial.text}"</p>
-                      <p className="font-bold text-gray-900">- {project.testimonial.author}</p>
+                    <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg border-l-4 border-primary">
+                      <p className="text-gray-700 italic mb-2 sm:mb-3 text-sm sm:text-base">"{project.testimonial.text}"</p>
+                      <p className="font-bold text-gray-900 text-sm sm:text-base">- {project.testimonial.author}</p>
                     </div>
                   </motion.div>
                 </div>
@@ -540,105 +540,105 @@ const Portfolio = () => {
 
           <div className="max-w-4xl mx-auto">
             {/* Contact Information Cards */}
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
               {/* Email Card */}
               <motion.a
-                href="mailto:abdullah@example.com"
+                href="mailto:abdullahnadeem2580@gmail.com"
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-blue-50 to-green-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
+                className="bg-gradient-to-br from-blue-50 to-green-50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 group-hover:shadow-lg transition-all">
-                    <Mail className="w-10 h-10 text-primary" />
+                  <div className="w-16 h-16 sm:w-20 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:shadow-lg transition-all">
+                    <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Email Me</h3>
-                  <p className="text-gray-600 mb-4">Send me an email anytime</p>
-                  <p className="text-primary font-semibold text-lg">abdullah@example.com</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Email Me</h3>
+                  <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Send me an email anytime</p>
+                  <p className="text-primary font-semibold text-base sm:text-lg">abdullahnadeem2580@gmail.com</p>
                 </div>
               </motion.a>
 
               {/* LinkedIn Card */}
               <motion.a
-                href="https://linkedin.com/in/abdullahnadeem"
+                href="https://www.linkedin.com/in/abdullah-nadeem-319560285"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-blue-50 to-green-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
+                className="bg-gradient-to-br from-blue-50 to-green-50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 group-hover:shadow-lg transition-all">
-                    <Linkedin className="w-10 h-10 text-primary" />
+                  <div className="w-16 h-16 sm:w-20 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:shadow-lg transition-all">
+                    <Linkedin className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">LinkedIn</h3>
-                  <p className="text-gray-600 mb-4">Connect professionally</p>
-                  <p className="text-primary font-semibold text-lg">@abdullahnadeem</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">LinkedIn</h3>
+                  <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Connect professionally</p>
+                  <p className="text-primary font-semibold text-base sm:text-lg">@abdullahnadeem</p>
                 </div>
               </motion.a>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
               {/* GitHub Card */}
               <motion.a
-                href="https://github.com/abdullahnadeem"
+                href="https://github.com/ab9898998989898"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-blue-50 to-green-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
+                className="bg-gradient-to-br from-blue-50 to-green-50 p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 group-hover:shadow-lg transition-all">
-                    <Github className="w-10 h-10 text-primary" />
+                  <div className="w-16 h-16 sm:w-20 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:shadow-lg transition-all">
+                    <Github className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">GitHub</h3>
-                  <p className="text-gray-600 mb-4">View my code</p>
-                  <p className="text-primary font-semibold text-lg">@abdullahnadeem</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">GitHub</h3>
+                  <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">View my code</p>
+                  <p className="text-primary font-semibold text-base sm:text-lg">@abdullahnadeem</p>
                 </div>
               </motion.a>
 
               {/* Contact Form Link */}
               <motion.a
-                href="https://forms.google.com/your-contact-form-id"
+                href="https://forms.gle/WP4FhPnZx2c6SPkp7"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-r from-primary to-blue-600 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group text-white"
+                className="bg-gradient-to-r from-primary to-blue-600 p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all group text-white"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-white/30 transition-all">
-                    <Send className="w-10 h-10 text-white" />
+                  <div className="w-16 h-16 sm:w-20 bg-white/20 rounded-full flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-white/30 transition-all">
+                    <Send className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Start a Project</h3>
-                  <p className="text-blue-100 mb-4">Fill out the project form</p>
-                  <p className="font-semibold text-lg">Click to Open Form →</p>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">Start a Project</h3>
+                  <p className="text-blue-100 mb-3 sm:mb-4 text-sm sm:text-base">Fill out the project form</p>
+                  <p className="font-semibold text-base sm:text-lg">Click to Open Form →</p>
                 </div>
               </motion.a>
             </div>
 
             {/* Availability & Response Time */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-green-50 to-emerald-50 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-2xl font-bold text-gray-900">Available Now</h3>
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="w-3 h-3 sm:w-4 bg-green-500 rounded-full animate-pulse"></div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">Available Now</h3>
                 </div>
-                <p className="text-gray-700 text-lg">
+                <p className="text-gray-700 text-sm sm:text-base md:text-lg">
                   I'm currently accepting new projects with start dates in the next 2-4 weeks.
                 </p>
               </motion.div>
@@ -647,10 +647,10 @@ const Portfolio = () => {
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-blue-50 to-cyan-50 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Quick Response</h3>
-                <p className="text-gray-700 text-lg">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Quick Response</h3>
+                <p className="text-gray-700 text-sm sm:text-base md:text-lg">
                   I typically respond within 24 hours during business days. Looking forward to hearing from you!
                 </p>
               </motion.div>
@@ -674,29 +674,29 @@ const Portfolio = () => {
           />
         </div>
 
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl md:text-2xl mb-12 text-blue-100">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 text-blue-100 px-4">
               Let's create something amazing together. Schedule a free consultation today!
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <a
                 href="#contact"
-                className="bg-white text-primary px-12 py-5 rounded-full hover:bg-blue-50 transition-all hover:shadow-2xl font-bold text-lg"
+                className="bg-white text-primary px-6 py-3 sm:px-8 sm:py-4 md:px-12 md:py-5 rounded-full hover:bg-blue-50 transition-all hover:shadow-2xl font-bold text-base sm:text-lg"
               >
                 Start a Project
               </a>
               <Link
                 to="/services"
-                className="border-2 border-white text-white px-12 py-5 rounded-full hover:bg-white hover:text-primary transition-all font-bold text-lg"
+                className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 md:px-12 md:py-5 rounded-full hover:bg-white hover:text-primary transition-all font-bold text-base sm:text-lg"
               >
                 View Services
               </Link>
