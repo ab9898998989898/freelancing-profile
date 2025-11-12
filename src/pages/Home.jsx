@@ -176,13 +176,13 @@ const Home = () => {
               >
                 Hire Me
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
               <a
                 href="/portfolio"
                 className="border-2 border-primary text-primary px-6 py-3 sm:px-8 sm:py-4 rounded-full hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
-              >
+                >
                 Explore My Work
               </a>
+                </Link>
             </motion.div>
           </div>
         </div>
