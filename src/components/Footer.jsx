@@ -57,14 +57,14 @@ const Footer = () => {
             <h4 className="font-bold mb-3 sm:mb-4 text-base sm:text-lg">Connect</h4>
             <div className="flex gap-3 sm:gap-4">
               <a
-                href="mailto:abdullah@example.com"
+                href="mailto:abdullahnadeem2580@gmail.com"
                 className="w-9 h-9 sm:w-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-all hover:scale-110"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/abdullah-nadeem-319560285"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-all hover:scale-110"
@@ -73,7 +73,7 @@ const Footer = () => {
                 <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ab9898998989898"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-all hover:scale-110"
